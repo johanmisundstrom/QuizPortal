@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Kontakt</h1>
+            <div class="header-nav">
+                <a href="javascript-quiz.html" class="nav-link-small">Quiz</a>
+                <a href="about.html" class="nav-link-small">Om</a>
+                <a href="index.html" class="home-btn">Startsidan</a>
+            </div>
+        </div>
+
+        <p class="contact-intro">
+            Har du frågor, feedback eller synpunkter? Skicka gärna ett meddelande!
+        </p>
+
+        <div class="success-message" id="success-message">
+            Tack för ditt meddelande!
+        </div>
+
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Namn *</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    placeholder="Ditt namn"
+                >
+                <div class="error-message" id="name-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-post *</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="din@email.se"
+                >
+                <div class="error-message" id="email-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="feedback">Meddelande *</label>
+                <textarea 
+                    id="feedback" 
+                    name="feedback" 
+                    placeholder="Skriv ditt meddelande här"
+                ></textarea>
+                <div class="error-message" id="feedback-error"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Skicka</button>
+        </form>
+
+        <div class="form-footer">
+            <p>* Obligatoriska fält</p>
+        </div>
+    </div>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>

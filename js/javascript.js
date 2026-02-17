@@ -2,85 +2,85 @@
 const questions = [
     {
         question: "Vad står DOM för?",
-        options: ["Document Object Model", "Data Object Management", "Digital Object Model", "Document Orientation Method"],
-        correct: 0,
+        options: ["Document Orientation Method", "Data Object Management", "Digital Object Model", "Document Object Model"],
+        correct: 3,
         explanation: "DOM står för Document Object Model och representerar webbsidans struktur som ett träd av objekt"
     },
     {
         question: "Vilken metod används för att hitta det första elementet som matchar en CSS-väljare?",
-        options: ["getElementById()", "querySelector()", "getElementsByClassName()", "findElement()"],
-        correct: 1,
+        options: ["getElementById()", "findElement()", "getElementsByClassName()", "querySelector()"],
+        correct: 3,
         explanation: "querySelector() returnerar det första elementet som matchar en CSS-väljare"
     },
     {
         question: "Vilken datatyp är 'Hello World'?",
-        options: ["Number", "Boolean", "String", "Object"],
+        options: ["Boolean", "Object", "String", "Number"],
         correct: 2,
         explanation: "Text inom citationstecken är datatypen String"
     },
     {
         question: "Vad returnerar typeof null i JavaScript?",
-        options: ["'null'", "'undefined'", "'object'", "'boolean'"],
-        correct: 2,
+        options: ["'object'", "'null'", "'undefined'", "'boolean'"],
+        correct: 0,
         explanation: "typeof null returnerar 'object' vilket är ett känt quirk i JavaScript"
     },
     {
         question: "Hur skapar man en kommentar på en rad i JavaScript?",
-        options: ["<!-- kommentar -->", "/* kommentar */", "// kommentar", "# kommentar"],
-        correct: 2,
+        options: ["# kommentar", "// kommentar", "/* kommentar */", "<!-- kommentar -->"],
+        correct: 1,
         explanation: "// används för enradskommentarer i JavaScript"
     },
     {
         question: "Vilken metod används för att lägga till ett element i slutet av en array?",
-        options: ["push()", "pop()", "shift()", "unshift()"],
-        correct: 0,
+        options: ["shift()", "pop()", "unshift()", "push()"],
+        correct: 3,
         explanation: "push() lägger till ett element i slutet av en array"
     },
     {
         question: "Vad är skillnaden mellan let och const?",
-        options: ["Ingen skillnad", "let kan inte ändras, const kan ändras", "const kan inte ändras, let kan ändras", "let har global scope, const har block scope"],
-        correct: 2,
+        options: ["const kan inte ändras, let kan ändras", "Ingen skillnad", "let har global scope, const har block scope", "let kan inte ändras, const kan ändras"],
+        correct: 0,
         explanation: "const skapar en variabel som inte kan tilldelas om, medan let kan ändras"
     },
     {
         question: "Vilket event triggas när användaren klickar på ett element?",
-        options: ["mousedown", "click", "press", "touch"],
+        options: ["touch", "click", "press", "mousedown"],
         correct: 1,
         explanation: "click-eventet triggas när användaren klickar på ett element"
     },
     {
         question: "Vad returnerar console.log('5' + 3)?",
-        options: ["8", "53", "'53'", "Error"],
-        correct: 2,
+        options: ["'53'", "53", "Error", "8"],
+        correct: 0,
         explanation: "JavaScript konverterar 3 till en sträng och konkatenerar, vilket ger '53'"
     },
     {
         question: "Hur skapar man en funktion i JavaScript?",
-        options: ["function myFunc() {}", "def myFunc() {}", "func myFunc() {}", "create function myFunc() {}"],
-        correct: 0,
+        options: ["create function myFunc() {}", "def myFunc() {}", "function myFunc() {}", "func myFunc() {}"],
+        correct: 2,
         explanation: "function nyckelordet används för att skapa funktioner i JavaScript"
     },
     {
         question: "Vilken metod används för att omvandla en sträng till versaler?",
-        options: ["toUpper()", "toUpperCase()", "uppercase()", "upper()"],
-        correct: 1,
+        options: ["toUpperCase()", "upper()", "uppercase()", "toUpper()"],
+        correct: 0,
         explanation: "toUpperCase() konverterar alla bokstäver i en sträng till versaler"
     },
     {
         question: "Vad är Event-Driven Programming?",
-        options: ["Programmering som körs i sekvens", "Programmering som styrs av händelser", "Programmering utan funktioner", "Programmering med loopar"],
+        options: ["Programmering med loopar", "Programmering som styrs av händelser", "Programmering som körs i sekvens", "Programmering utan funktioner"],
         correct: 1,
         explanation: "Event-Driven Programming är när kodens exekvering styrs av händelser som användarinteraktioner"
     },
     {
         question: "Vilken loop används när man inte vet hur många gånger loopen ska köras?",
-        options: ["for loop", "while loop", "do-while loop", "foreach loop"],
-        correct: 1,
+        options: ["do-while loop", "foreach loop", "while loop", "for loop"],
+        correct: 2,
         explanation: "while loop fortsätter tills villkoret blir falskt, bra när antalet iterationer är okänt"
     },
     {
         question: "Vad gör metoden slice() på en array?",
-        options: ["Tar bort element", "Extraherar en del av arrayen utan att ändra originalet", "Sorterar arrayen", "Lägger till element"],
+        options: ["Sorterar arrayen", "Extraherar en del av arrayen utan att ändra originalet", "Lägger till element", "Tar bort element"],
         correct: 1,
         explanation: "slice() extraherar en del av arrayen och returnerar en ny array utan att ändra originalet"
     },
@@ -92,92 +92,92 @@ const questions = [
     },
     {
         question: "Vad returnerar Array.isArray([1, 2, 3])?",
-        options: ["false", "true", "undefined", "null"],
-        correct: 1,
+        options: ["undefined", "false", "true", "null"],
+        correct: 2,
         explanation: "Array.isArray() returnerar true eftersom argumentet är en array"
     },
     {
         question: "Hur får man tillgång till det tredje elementet i en array?",
-        options: ["array[3]", "array[2]", "array.get(3)", "array.item(2)"],
-        correct: 1,
+        options: ["array.get(3)", "array.item(2)", "array[3]", "array[2]"],
+        correct: 3,
         explanation: "Arrays är nollindexerade, så det tredje elementet har index 2"
     },
     {
         question: "Vad är Node.js?",
-        options: ["Ett JavaScript-bibliotek", "En runtime-miljö för att köra JavaScript på servern", "Ett ramverk för frontend", "En databas"],
-        correct: 1,
+        options: ["Ett ramverk för frontend", "En databas", "En runtime-miljö för att köra JavaScript på servern", "Ett JavaScript-bibliotek"],
+        correct: 2,
         explanation: "Node.js är en runtime-miljö som låter dig köra JavaScript utanför webbläsaren"
     },
     {
         question: "Vilken metod används för att ta bort det sista elementet från en array?",
-        options: ["shift()", "pop()", "remove()", "delete()"],
-        correct: 1,
+        options: ["shift()", "remove()", "pop()", "delete()"],
+        correct: 2,
         explanation: "pop() tar bort och returnerar det sista elementet från en array"
     },
     {
         question: "Vad gör addEventListener()?",
-        options: ["Skapar ett nytt element", "Kopplar en händelsehanterare till ett element", "Tar bort ett element", "Ändrar CSS"],
-        correct: 1,
+        options: ["Ändrar CSS", "Skapar ett nytt element", "Tar bort ett element", "Kopplar en händelsehanterare till ett element"],
+        correct: 3,
         explanation: "addEventListener() kopplar en händelsehanterare som lyssnar efter specifika events"
     },
     {
         question: "Vilken metod används för att kombinera alla element i en array till en sträng?",
-        options: ["combine()", "join()", "concat()", "merge()"],
-        correct: 1,
+        options: ["combine()", "concat()", "merge()", "join()"],
+        correct: 3,
         explanation: "join() sammanfogar alla element i en array till en sträng med en valfri separator"
     },
     {
         question: "Vad är skillnaden mellan == och === i JavaScript?",
-        options: ["Ingen skillnad", "== jämför värde och typ, === jämför bara värde", "=== jämför värde och typ, == jämför bara värde", "== är för strängar, === är för nummer"],
-        correct: 2,
+        options: ["=== jämför värde och typ, == jämför bara värde", "== jämför värde och typ, === jämför bara värde", "Ingen skillnad", "== är för strängar, === är för nummer"],
+        correct: 0,
         explanation: "=== jämför både värde och datatyp (strikt likhet), == jämför bara värde"
     },
     {
         question: "Vilket event triggas när en användare släpper en tangent?",
-        options: ["keydown", "keypress", "keyup", "keyrelease"],
+        options: ["keydown", "keyrelease", "keyup", "keypress"],
         correct: 2,
         explanation: "keyup-eventet triggas när användaren släpper en tangent"
     },
     {
         question: "Vad gör metoden filter() på en array?",
-        options: ["Sorterar arrayen", "Skapar en ny array med element som passerar ett test", "Tar bort alla element", "Ändrar varje element"],
-        correct: 1,
+        options: ["Sorterar arrayen", "Ändrar varje element", "Skapar en ny array med element som passerar ett test", "Tar bort alla element"],
+        correct: 2,
         explanation: "filter() skapar en ny array med alla element som passerar testet i callback-funktionen"
     },
     {
         question: "Hur skapar man ett objekt i JavaScript?",
-        options: ["let obj = []", "let obj = {}", "let obj = ()", "let obj = new Array()"],
-        correct: 1,
+        options: ["let obj = []", "let obj = ()", "let obj = {}", "let obj = new Array()"],
+        correct: 2,
         explanation: "Måsvingar {} används för att skapa objekt i JavaScript"
     },
     {
         question: "Vad gör metoden map() på en array?",
-        options: ["Filtrerar element", "Skapar en ny array genom att kalla en funktion på varje element", "Sorterar arrayen", "Tar bort dubbletter"],
+        options: ["Sorterar arrayen", "Skapar en ny array genom att kalla en funktion på varje element", "Tar bort dubbletter", "Filtrerar element"],
         correct: 1,
         explanation: "map() skapar en ny array genom att applicera en funktion på varje element"
     },
     {
         question: "Vilket scope har variabler deklarerade med var?",
-        options: ["Block scope", "Function scope", "Global scope alltid", "Module scope"],
-        correct: 1,
+        options: ["Function scope", "Block scope", "Module scope", "Global scope alltid"],
+        correct: 0,
         explanation: "var har function scope, till skillnad från let och const som har block scope"
     },
     {
         question: "Vad returnerar parseInt('123px')?",
-        options: ["123px", "123", "NaN", "Error"],
-        correct: 1,
+        options: ["123", "123px", "Error", "NaN"],
+        correct: 0,
         explanation: "parseInt() extraherar heltalet från början av strängen och returnerar 123"
     },
     {
         question: "Vilken metod används för att hitta indexet för ett element i en array?",
-        options: ["find()", "search()", "indexOf()", "locate()"],
-        correct: 2,
+        options: ["indexOf()", "find()", "locate()", "search()"],
+        correct: 0,
         explanation: "indexOf() returnerar indexet för det första förekomsten av ett element i en array"
     },
     {
         question: "Vad är callback-funktioner i JavaScript?",
-        options: ["Funktioner som anropas automatiskt", "Funktioner som skickas som argument till andra funktioner", "Funktioner som returnerar andra funktioner", "Funktioner utan parametrar"],
-        correct: 1,
+        options: ["Funktioner som skickas som argument till andra funktioner", "Funktioner utan parametrar", "Funktioner som anropas automatiskt", "Funktioner som returnerar andra funktioner"],
+        correct: 0,
         explanation: "En callback är en funktion som skickas som argument till en annan funktion och anropas senare"
     }
 ];

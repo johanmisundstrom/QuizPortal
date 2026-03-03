@@ -1,4 +1,3 @@
-// Array med alla quiz-frågor
 const questions = [
     {
         question: "Vad står DOM för?",
@@ -179,22 +178,108 @@ const questions = [
         options: ["Funktioner som skickas som argument till andra funktioner", "Funktioner utan parametrar", "Funktioner som anropas automatiskt", "Funktioner som returnerar andra funktioner"],
         correct: 0,
         explanation: "En callback är en funktion som skickas som argument till en annan funktion och anropas senare"
+    },
+    {
+        question: "Hur skriver man en for-loop i JavaScript?",
+        options: ["for (i = 0; i < 10; i++)", "loop (i = 0 to 10)", "for i in range(10)", "repeat 10 times"],
+        correct: 0,
+        explanation: "En for-loop i JavaScript använder syntaxen: for (initiering; villkor; uppdatering)"
+    },
+    {
+        question: "Vad är en if-sats?",
+        options: ["En loop", "En villkorlig sats som kör kod om ett villkor är sant", "En funktion", "En variabel"],
+        correct: 1,
+        explanation: "En if-sats kör kod bara om ett specifikt villkor är sant"
+    },
+    {
+        question: "Hur delar man upp en sträng i en array?",
+        options: ["split()", "divide()", "separate()", "break()"],
+        correct: 0,
+        explanation: "split() delar upp en sträng i en array baserat på en separator"
+    },
+    {
+        question: "Vad gör metoden toLowerCase()?",
+        options: ["Gör alla bokstäver stora", "Gör alla bokstäver små", "Tar bort mellanslag", "Vänder på strängen"],
+        correct: 1,
+        explanation: "toLowerCase() konverterar alla bokstäver i en sträng till gemener (små bokstäver)"
+    },
+    {
+        question: "Vad returnerar Math.floor(4.7)?",
+        options: ["4", "5", "4.7", "Error"],
+        correct: 0,
+        explanation: "Math.floor() avrundar nedåt till närmaste heltal, så 4.7 blir 4"
+    },
+    {
+        question: "Hur får man längden på en array?",
+        options: ["array.size", "array.count", "array.length", "array.size()"],
+        correct: 2,
+        explanation: "array.length returnerar antalet element i en array"
+    },
+    {
+        question: "Vad är skillnaden mellan null och undefined?",
+        options: ["Ingen skillnad", "null är avsiktligt tomt, undefined betyder att variabeln inte har tilldelats ett värde", "undefined är avsiktligt tomt, null betyder ej tilldelat", "Båda är samma sak"],
+        correct: 1,
+        explanation: "null är ett avsiktligt tomt värde, medan undefined betyder att variabeln inte har tilldelats något värde ännu"
+    },
+    {
+        question: "Vad används template literals för?",
+        options: ["Kommentarer", "Strängar med variabler inbäddade", "Loopar", "Funktioner"],
+        correct: 1,
+        explanation: "Template literals (backticks) används för att skapa strängar med inbäddade variabler: `Hello ${name}`"
+    },
+    {
+        question: "Vilken operator används för logiskt OCH?",
+        options: ["&", "&&", "AND", "and"],
+        correct: 1,
+        explanation: "Operatorn && används för logiskt OCH i JavaScript"
+    },
+    {
+        question: "Vilken operator används för logiskt ELLER?",
+        options: ["|", "||", "OR", "or"],
+        correct: 1,
+        explanation: "Operatorn || används för logiskt ELLER i JavaScript"
+    },
+    {
+        question: "Vad gör operatorn ! (utropstecken)?",
+        options: ["Addition", "Negering (NOT)", "Multiplikation", "Jämförelse"],
+        correct: 1,
+        explanation: "Operatorn ! negerar ett booleskt värde (NOT), så !true blir false"
+    },
+    {
+        question: "Hur kommer man åt en property i ett objekt?",
+        options: ["object->property", "object.property eller object['property']", "object::property", "object@property"],
+        correct: 1,
+        explanation: "Man kommer åt properties med punkt-notation (object.property) eller bracket-notation (object['property'])"
+    },
+    {
+        question: "Vad är ternary operator?",
+        options: ["En loop", "En kortform för if-else: villkor ? värde1 : värde2", "En funktion", "En array-metod"],
+        correct: 1,
+        explanation: "Ternary operator är en kortform för if-else: (age >= 18) ? 'vuxen' : 'barn'"
+    },
+    {
+        question: "Vad gör metoden includes() på en array?",
+        options: ["Lägger till element", "Kollar om ett element finns i arrayen", "Tar bort element", "Sorterar arrayen"],
+        correct: 1,
+        explanation: "includes() returnerar true om elementet finns i arrayen, annars false"
+    },
+    {
+        question: "Vad returnerar Math.random()?",
+        options: ["Ett heltal mellan 0 och 10", "Ett decimaltal mellan 0 och 1", "Ett heltal mellan 1 och 100", "Alltid 0.5"],
+        correct: 1,
+        explanation: "Math.random() returnerar ett slumpmässigt decimaltal mellan 0 (inklusivt) och 1 (exklusivt)"
     }
 ];
 
-// Håller koll på vilken fråga vi är på
 let currentQuestion = 0;
-// Sparar alla användarens svar
 let userAnswers = new Array(questions.length).fill(null);
 
-// Visar frågan på skärmen
 function loadQuestion() {
     const question = questions[currentQuestion];
     
     document.getElementById('question-number').textContent = `Fråga ${currentQuestion + 1} av ${questions.length}`;
     document.getElementById('question-text').textContent = question.question;
     
-    // Rensar gamla alternativ och skapar nya
     const optionsContainer = document.getElementById('options');
     optionsContainer.innerHTML = '';
     
@@ -202,10 +287,9 @@ function loadQuestion() {
         const optionDiv = document.createElement('div');
         optionDiv.className = 'option';
         optionDiv.dataset.index = index;
-        optionDiv.setAttribute('tabindex', '0'); // Gör så man kan tabba till alternativet
-        optionDiv.setAttribute('role', 'button'); // Berättar för skärmläsare att det är en knapp
+        optionDiv.setAttribute('tabindex', '0');
+        optionDiv.setAttribute('role', 'button');
         
-        // Om användaren redan valt detta alternativ, markera det
         if (userAnswers[currentQuestion] === index) {
             optionDiv.classList.add('selected');
         }
@@ -218,7 +302,6 @@ function loadQuestion() {
     updateButtons();
 }
 
-// Event delegation - en eventlyssnare för alla alternativ istället för en för varje
 document.querySelector('#options').addEventListener('click', function(event) {
     if (event.target.classList.contains('option')) {
         const index = parseInt(event.target.dataset.index);
@@ -226,38 +309,32 @@ document.querySelector('#options').addEventListener('click', function(event) {
     }
 });
 
-// Samma som ovan men för tangentbord (Enter och Space)
 document.querySelector('#options').addEventListener('keydown', function(event) {
     if (event.target.classList.contains('option')) {
         if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault(); // Stoppar Space från att scrolla
+            event.preventDefault();
             const index = parseInt(event.target.dataset.index);
             selectAnswer(index);
         }
     }
 });
 
-// När användaren väljer ett svar
 function selectAnswer(index) {
     userAnswers[currentQuestion] = index;
-    loadQuestion(); // Laddar om så markeringen syns
+    loadQuestion();
 }
 
-// Uppdaterar progress bar
 function updateProgress() {
     const progress = ((currentQuestion + 1) / questions.length) * 100;
     document.getElementById('progress').style.width = progress + '%';
 }
 
-// Uppdaterar knapparna (disable/enable och text)
 function updateButtons() {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     
-    // Disable föregående-knappen om vi är på första frågan
     prevBtn.disabled = currentQuestion === 0;
     
-    // Ändrar text på knappen beroende på om det är sista frågan
     if (currentQuestion === questions.length - 1) {
         nextBtn.textContent = 'Avsluta Quiz';
     } else {
@@ -285,7 +362,6 @@ function previousQuestion(event) {
     }
 }
 
-// Kollar om användaren svarat på allt innan avslut
 function finishQuiz() {
     const unanswered = userAnswers.filter(a => a === null).length;
     
@@ -297,7 +373,6 @@ function finishQuiz() {
     showResults();
 }
 
-// Visar felmeddelande högst upp på sidan
 function showError(message) {
     const errorDiv = document.getElementById('error-message');
     errorDiv.textContent = message;
@@ -305,18 +380,15 @@ function showError(message) {
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // Döljer meddelandet efter 5 sekunder
     setTimeout(() => {
         errorDiv.classList.add('hidden');
     }, 5000);
 }
 
-// Visar resultat när quizet är klart
 function showResults() {
     document.getElementById('quiz-section').classList.add('hidden');
     document.getElementById('results-section').classList.remove('hidden');
     
-    // Räknar hur många rätt användaren fick
     let correctCount = 0;
     questions.forEach((q, i) => {
         if (userAnswers[i] === q.correct) {
@@ -328,7 +400,6 @@ function showResults() {
     
     document.getElementById('score').textContent = `${correctCount} / ${questions.length}`;
     
-    // Visar olika meddelanden beroende på resultat
     let message = '';
     if (percentage >= 90) {
         message = 'Utmärkt! Du behärskar JavaScript!';
@@ -344,7 +415,6 @@ function showResults() {
     displayReview();
 }
 
-// Visar genomgång av alla frågor och svar
 function displayReview() {
     const reviewList = document.getElementById('review-list');
     reviewList.innerHTML = '';
@@ -391,7 +461,6 @@ function displayReview() {
     });
 }
 
-// Startar om quizet från början
 function restartQuiz(event) {
     if (event) event.preventDefault();
     
@@ -402,10 +471,8 @@ function restartQuiz(event) {
     loadQuestion();
 }
 
-// Kopplar funktioner till knapparna
 document.getElementById('prev-btn').addEventListener('click', previousQuestion);
 document.getElementById('next-btn').addEventListener('click', nextQuestion);
 document.getElementById('restart-btn').addEventListener('click', restartQuiz);
 
-// Startar quizet när sidan laddas
 loadQuestion();

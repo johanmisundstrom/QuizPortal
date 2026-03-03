@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML & CSS Quiz</title>
+    <title>Frontend Ramverk Quiz</title>
     <link rel="stylesheet" href="css/quiz.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>HTML & CSS Quiz</h1>
-            <div class="header-nav"><a href="index.html" class="home-btn">← Startsidan</a></div>
+            <h1>Frontend Ramverk</h1>
+            <div class="header-nav">
+                <a href="index.html" class="home-btn">← Startsidan</a>
+            </div>
         </div>
-        
+
         <div id="quiz-section">
             <div id="error-message" class="error-message hidden"></div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progress"></div>
             </div>
-            
+
             <div class="question-container">
                 <div class="question-number" id="question-number"></div>
                 <div class="question-text" id="question-text"></div>
                 <div class="options" id="options"></div>
             </div>
-            
+
             <div class="navigation">
                 <button class="btn-secondary" id="prev-btn">Föregående</button>
                 <button class="btn-primary" id="next-btn">Nästa</button>
@@ -42,7 +44,7 @@
                     <a href="index.html" class="btn-link">Tillbaka till startsidan</a>
                 </div>
             </div>
-            
+
             <div class="review-section">
                 <h2>Genomgång av svar</h2>
                 <div id="review-list"></div>
@@ -51,6 +53,6 @@
     </div>
 
     <script src="js/quiz-engine.js"></script>
-    <script src="js/html-css.js"></script>
+    <script src="js/frontend-ramverk.js"></script>
 </body>
 </html>

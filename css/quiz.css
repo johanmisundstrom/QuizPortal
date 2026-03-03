@@ -339,4 +339,50 @@ button:disabled {
     .results-actions {
         flex-direction: column;
     }
+    .quiz-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.timer {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #2d3748;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-warning {
+    color: #e53e3e;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.live-score {
+    font-size: 0.95em;
+    color: #555;
+    font-weight: 600;
+}
+
+.timeout-info {
+    background: #fff3cd;
+    color: #856404;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.review-item.unanswered {
+    border-left-color: #ed8936;
+}
 }
